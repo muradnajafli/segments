@@ -3,7 +3,7 @@ package com.epam.rd.autotasks.segments;
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 import static java.lang.StrictMath.pow;
-
+import static java.lang.*
 class Segment {
     private Point start;
     private Point end;
@@ -38,8 +38,8 @@ class Segment {
         double y2 = end.getY();
 
         double x3 = another.start.getX();
-        double y3 = another.end.getY();
-        double x4 = another.start.getX();
+        double y3 = another.start.getY();
+        double x4 = another.end.getX();
         double y4 = another.end.getY();
 
         double denominator = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
