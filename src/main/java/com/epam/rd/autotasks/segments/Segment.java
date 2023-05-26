@@ -3,7 +3,6 @@ package com.epam.rd.autotasks.segments;
 import static java.lang.Math.abs;
 import static java.lang.Math.sqrt;
 import static java.lang.StrictMath.pow;
-import static java.lang.*
 class Segment {
     private Point start;
     private Point end;
