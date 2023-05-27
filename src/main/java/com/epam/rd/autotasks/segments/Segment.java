@@ -8,12 +8,17 @@ class Segment {
     private Point end;
 
     public Segment(Point start, Point end) {
-        this.start = start;
-        this.end = end;
+
+        if (start == null || end == null) {
+            throw new IllegalArgumentException("Cannot have null point(s).");
+        }
 
         if (start.getX() == end.getX() && start.getY() == end.getY()) {
             throw new IllegalArgumentException("Segment is degenerate");
         }
+
+        this.start = start;
+        this.end = end;
     }
 
     public double length() {
@@ -31,6 +36,9 @@ class Segment {
     }
 
     public Point intersection(Segment another) {
+        if (another == null) {
+            return null;
+        }
         double x1 = start.getX();
         double y1 = start.getY();
         double x2 = end.getX();
