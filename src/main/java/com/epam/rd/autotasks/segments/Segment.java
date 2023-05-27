@@ -1,22 +1,15 @@
 package com.epam.rd.autotasks.segments;
 
-import static java.lang.Math.abs;
-import static java.lang.Math.sqrt;
-import static java.lang.StrictMath.pow;
-class Segment {
-    private Point start;
-    private Point end;
+import java.awt.*;
+
+public class Segment {
+    private final Point start;
+    private final Point end;
 
     public Segment(Point start, Point end) {
-
-        if (start == null || end == null) {
-            throw new IllegalArgumentException("Cannot have null point(s).");
-        }
-
-        if (start.getX() == end.getX() && start.getY() == end.getY()) {
+        if ((start.getX() == end.getX()) && start.getY() == end.getY()) {
             throw new IllegalArgumentException("Segment is degenerate");
         }
-
         this.start = start;
         this.end = end;
     }
@@ -36,9 +29,6 @@ class Segment {
     }
 
     public Point intersection(Segment another) {
-        if ((end.getY() - start.getY() / end.getX() - start.getX()) == another.end.getY() - another.start.getY() / another.end.getX() - another.start.getX()) {
-            return null;
-        }
         double x1 = start.getX();
         double y1 = start.getY();
         double x2 = end.getX();
@@ -77,6 +67,6 @@ class Segment {
         double pointX = point.getX();
         double pointY = point.getY();
 
-        return (pointX >= minX && pointY <= maxX) && (pointY >= minY && pointY <= maxY);
+        return (pointX >= minX && pointX <= maxX) && (pointY >= minY && pointY <= maxY);
     }
 }
