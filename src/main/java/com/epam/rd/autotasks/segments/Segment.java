@@ -36,7 +36,7 @@ class Segment {
     }
 
     public Point intersection(Segment another) {
-        if (another == null) {
+        if ((end.getY() - start.getY() / end.getX() - start.getX()) == another.end.getY() - another.start.getY() / another.end.getX() - another.start.getX()) {
             return null;
         }
         double x1 = start.getX();
